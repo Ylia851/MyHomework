@@ -37,10 +37,12 @@ Console.WriteLine("Number A in degree B is " + NamDegree(A, B));
 int NatSum (int a)
 {
     int sum = 0;
+    int b = 0;
     
     while (a > 0)
     {
-        sum += a % 10;
+        b = a % 10;
+        sum = sum + b;
     }
     return sum;
 }
