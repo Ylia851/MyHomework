@@ -43,6 +43,9 @@ PrintArray(matrix);
 17 - такого числа в массиве нет
 */
 
+Console.WriteLine("Input position of matrix: ");
+int pos = Convert.ToInt32(Console.ReadLine());
+
 string FindNumber(double[,] matrix)
 {
     int number = 0;
@@ -51,15 +54,14 @@ string FindNumber(double[,] matrix)
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            if(matrix[i, j] == number)
-                return "Number is finded";
+            number++;
+            if(pos == number)
+                Console.WriteLine($"Под номером элемента {pos} находится значение {matrix[i, j]}.");
         }
     }
-    return "Number isn't finded";
+    return "Номер элемента отсутствует в массиве.";
 }
 
-Console.WriteLine("Input number: ");
-int number = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(FindNumber(matrix));
 
